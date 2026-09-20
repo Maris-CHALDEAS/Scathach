@@ -1,5 +1,6 @@
 #include "../headers/Sprites.h"
 #include "../headers/Graphics.h"
+#include "../headers/Global.h"
 #include <SDL2/SDL_render.h>
 #include <cstdio>
 
@@ -30,7 +31,7 @@ void Sprite::draw(Graphics &graphics, int x, int y)
 {
 
 	SDL_Rect destinationRectange = {
-	    x, y, this->_sourceRect.w, this->_sourceRect.h};
+	    x, y, static_cast<int>(this->_sourceRect.w * Globals::SPRITE_SCALE), static_cast<int>(this->_sourceRect.h * Globals::SPRITE_SCALE)};
 	graphics.blitSurface(this->_spriteSheet, &this->_sourceRect, &destinationRectange);
 }
 

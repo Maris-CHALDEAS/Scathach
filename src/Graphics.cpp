@@ -7,7 +7,7 @@
 
 
 #include "../headers/Graphics.h"
-
+#include "../headers/Global.h"
 /*
  * Graphics class
  * Holds all information dealing with graphics for the game
@@ -15,7 +15,7 @@
 
 Graphics::Graphics()
 {
-    SDL_CreateWindowAndRenderer(640,480,0,&this->_window,&this->_renderer);
+    SDL_CreateWindowAndRenderer(Globals::SCREEN_WIDTH,Globals::SCREEN_HEIGHT,0,&this->_window,&this->_renderer);
     SDL_SetWindowTitle(this->_window, "Scathach");
 
     int imgFlags = IMG_INIT_PNG;

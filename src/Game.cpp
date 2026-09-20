@@ -6,13 +6,10 @@
 #include "../headers/Graphics.h"
 #include "../headers/Input.h"
 
-
-
 namespace {
     const int FPS = 50;
     const int MAX_FRAME_TIME = 5 * 1000 / FPS;
 }
-
 
 Game::Game()
 {
@@ -29,8 +26,11 @@ void Game::gameLoop()
     Input input;
     SDL_Event event;
 
-    this->_player = Sprite(graphics, "content/sprites/run.png", 0 ,373, 175, 550, 100, 100);
-
+    // this->_player = Sprite(graphics, "content/sprites/run.png", 0 ,373, 175, 550, 100, 100);
+    // this->_player = Sprite(graphics, "content/sprites/sprites.png", 0 ,0, 30, 30, 100, 100);
+    this->_player = AnimatedSprite(graphics, "content/sprites/sprites.png", 0, 0, 30, 32, 100, 100, 100);
+    this->_player.setupAnimations();
+    this->_player.playAnimation("RunRight");
 
     int LAST_UPDATE_TIME = SDL_GetTicks();
     while (true) {
@@ -69,4 +69,6 @@ void Game::draw(Graphics &graphics)
 }
 
 void Game::update(float elapsedtime)
-{}
+{
+    this->_player.update(elapsedtime);
+}
