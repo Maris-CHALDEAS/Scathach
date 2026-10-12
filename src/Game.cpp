@@ -28,7 +28,7 @@ void Game::gameLoop()
 
     // this->_player = Sprite(graphics, "content/sprites/run.png", 0 ,373, 175, 550, 100, 100);
     // this->_player = Sprite(graphics, "content/sprites/sprites.png", 0 ,0, 30, 30, 100, 100);
-    this->_player = AnimatedSprite(graphics, "content/sprites/sprites.png", 0, 0, 30, 32, 100, 100, 100);
+    this->_player = AnimatedSprite(graphics, "content/sprites/sprites.png", 0, 0, 30, 30, 100, 100, 100);
     this->_player.setupAnimations();
     this->_player.playAnimation("RunRight");
 

@@ -1,10 +1,8 @@
-
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_filesystem.h>
 #include <SDL2/SDL_video.h>
 #include <SDL2/SDL_image.h>
 #include <cstdio>
-
 
 #include "../headers/Graphics.h"
 #include "../headers/Global.h"
